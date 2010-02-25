@@ -1,47 +1,78 @@
-<% content_for :page_title do %>
-	<%= @site_page.page_title rescue 'Charity T-Shirts, Wolfmother, The National, Broken Social Scene, Devendra Banhart, Clap Your Hands Say Yeah, Rilo Kiley...' %>
+<% content_for :jquery_document_ready do %>
+  $(".contact_form form").validate();
 <% end %>
 
-<% content_for :sidebar_left do %>
-	<%= render :partial => "shared/bands_sidebar",  :locals => { :products => @products, :taxon => @taxon } %>
-<% end %>
-<h1 class="form">CONTACT US</h1>
-<script type="text/javascript">
-	Cufon.replace('h1.form');
-</script>
+<%= seo_friendly_title "SEND US A LINE", :class => "title" %>
+<p>Have a question / comment / suggestion? We'd like to know.</p>
 
 <%= error_messages_for :inquiry %>
-<div class="generic_form">
-	<% form_for(:inquiry, :url => collection_url) do |f| %>
-	  <p><%= f.label :name, "Your Name" %>
-		   <%= f.text_field :name, :class => 'required' %>
-		</p>
-		<p><%= f.label :email, "Your Email Address" %>
-		   <%= f.text_field :email, :class => 'required email' %>
-		</p>
-		<p><%= f.label :name, "Type of Inquiry" %>
-		   <%= f.select :inquiry_type, INQUIRY_TYPES %>
-		</p>
-		<p><%= f.label :order_no, "Order #" %>
-		   <%= f.text_field :order_no %>
-		</p>
-		<p><%= f.label :message, "Message" %>
-		   <%= f.text_area :message, :class => 'required' %>
-		</p>
-		<p><%= label_tag 'mailing_list', "Send me YBP news and info by email!" %>
-		   <%= check_box_tag 'mailing_list' %>
-		</p>
-	  <p>
-	    <%= submit_tag "Send It!" %>
-	  </p>
-	<% end %>
-	<script>
-	  $(document).ready(function(){
-	    $(".generic_form form").validate();
-	  });
-	  </script>
-</div>
 
-<% content_for :sidebar_right do %>
-	<%= render :partial => 'shared/dynamic_sidebars' %>
-<% end %>
+<div class="contact_form">
+	<% form_for(:inquiry, :url => collection_url) do |f| %>
+    <div class="left">
+      <p>
+        <%= f.label :name, "Inquiry" %>
+        <%= f.select :inquiry_type, inquiry_types %>
+      </p>
+      <p>
+        <%= f.label :order_no, "Order #" %>
+        <%= f.text_field :order_no %>
+      </p>
+      <p>
+        <%= f.label :first_name, "First Name" %>
+        <%= f.text_field :name, :class => 'required' %>
+      </p>
+      <p>
+        <%= f.label :last_name, "Last Name" %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email, :class => 'required email' %>
+      </p>
+      <p>
+        <%= f.label :phone, "Phone #" %>
+        <%= f.text_field :name, :class => 'phone' %>
+      </p>
+      <p>
+        <%= f.label :address_1, "Address 1" %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :address2_, "Address 2" %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :city, "City" %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :state, "State" %>
+        <%= f.select :name, ["NY"], {}, :class => "state" %>
+        <%= f.label :zip_code, "Zip Code" %>
+        <%= f.text_field :name, :class => "zip-code" %>
+      </p>
+      <p>
+        <%= f.label :country, "Country" %>
+        <%= f.text_field :name %>
+      </p>
+    </div>
+    <div class="right">
+      <p>
+        <%= f.label :message, "Message" %><br/>
+        <%= f.text_area :message, :class => 'required' %>
+      </p>
+      <p class="checkbox">
+        <span><%= f.check_box :name %></span>
+        <%= f.label :message, "Yes, please notify me of new products or other FeliX news!" %>
+      </p>
+      <p class="checkbox">
+        <span><%= f.check_box :name %></span>
+        <%= f.label :message, "Yes, I would like a reply to my email inquiry." %>
+      </p>
+      <p>
+        <%= image_submit_tag "felix/buttons/contact_submit_up.png", :alt => "Submit" %>
+      </p>
+    </div>
+	<% end %>
+</div>

@@ -15,6 +15,5 @@ class InquiryMailer < ActionMailer::Base
         bcc        Spree::Config[:contact_form_bcc]
         from       comment.user.email
     end
-    
-    
+
 end

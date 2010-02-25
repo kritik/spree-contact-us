@@ -1,0 +1,16 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t('inquiries_preferences') %></h1>
+
+<table>
+  <tr>
+    <th scope="row"><%= t("inquiries_recipients_to") %>:</th> 
+    <td><%= Spree::Config[:contact_form_to] %></td>
+  </tr>
+  <tr>
+    <th scope="row"><%= t("inquiries_recipients_bcc") %>:</th> 
+    <td><%= Spree::Config[:contact_form_bcc] %></td>
+  </tr>
+</table>
+
+<p><%= link_to_with_icon 'edit', t("edit"), edit_admin_inquiries_settings_path %></p>

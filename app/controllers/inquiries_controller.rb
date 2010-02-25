@@ -1,4 +1,4 @@
-class InquiriesController < ApplicationController
+class InquiriesController < Spree::BaseController
   helper 'spree/base'
   
   resource_controller
@@ -9,12 +9,12 @@ class InquiriesController < ApplicationController
     if params[:mailing_list] 
       # make call to mail engine API
     end
-    
   end
   
   
   def index
-    redirect_to(new_inquiry_url) unless params[:inquiry]
+    #redirect_to(new_inquiry_url) unless params[:inquiry]
+    render :action => :new
   end
   
   
