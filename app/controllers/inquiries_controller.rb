@@ -1,21 +1,23 @@
 class InquiriesController < Spree::BaseController
-  helper 'spree/base'
-  
   resource_controller
-  
-  create.flash "Got it! We'll be back in touch shortly."
-  
-  create.after do
-    if params[:mailing_list] 
-      # make call to mail engine API
-    end
-  end
-  
+
+  helper 'spree/base'
   
   def index
     #redirect_to(new_inquiry_url) unless params[:inquiry]
+    build_object
+    load_object
     render :action => :new
   end
+ 
+  create do
+    flash "Got it! We'll be back in touch shortly."
   
+    after do
+      if params[:mailing_list] 
+        # make call to mail engine API
+      end
+    end
+  end
   
 end

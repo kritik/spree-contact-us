@@ -1,11 +1,11 @@
+<%= error_messages_for :inquiry %>
+
 <% content_for :jquery_document_ready do %>
   $(".contact_form form").validate();
 <% end %>
 
 <%= seo_friendly_title "SEND US A LINE", :class => "title" %>
 <p>Have a question / comment / suggestion? We'd like to know.</p>
-
-<%= error_messages_for :inquiry %>
 
 <div class="contact_form">
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
@@ -19,12 +19,8 @@
         <%= f.text_field :order_no %>
       </p>
       <p>
-        <%= f.label :first_name, "First Name" %>
+        <%= f.label :first_name, "Name" %>
         <%= f.text_field :name, :class => 'required' %>
-      </p>
-      <p>
-        <%= f.label :last_name, "Last Name" %>
-        <%= f.text_field :name %>
       </p>
       <p>
         <%= f.label :email, "Email" %>
@@ -34,34 +30,23 @@
         <%= f.label :phone, "Phone #" %>
         <%= f.text_field :name, :class => 'phone' %>
       </p>
-      <p>
-        <%= f.label :address_1, "Address 1" %>
-        <%= f.text_field :name %>
-      </p>
-      <p>
-        <%= f.label :address2_, "Address 2" %>
-        <%= f.text_field :name %>
-      </p>
-      <p>
-        <%= f.label :city, "City" %>
-        <%= f.text_field :name %>
-      </p>
-      <p>
-        <%= f.label :state, "State" %>
-        <%= f.select :name, ["NY"], {}, :class => "state" %>
-        <%= f.label :zip_code, "Zip Code" %>
-        <%= f.text_field :name, :class => "zip-code" %>
-      </p>
-      <p>
-        <%= f.label :country, "Country" %>
-        <%= f.text_field :name %>
-      </p>
     </div>
     <div class="right">
       <p>
         <%= f.label :message, "Message" %><br/>
         <%= f.text_area :message, :class => 'required' %>
       </p>
+    </div>
+    <div class="left">
+      <p class="address">
+        Felix Ltd<br/>
+        12906 NE 30th Street<br/>
+        Bellevue WA 98005-1607<br/>
+        425.269.1556<br/>
+        info@byfelix.net
+      </p>
+    </div>
+    <div class="right">
       <p class="checkbox">
         <span><%= f.check_box :name %></span>
         <%= f.label :message, "Yes, please notify me of new products or other FeliX news!" %>
@@ -71,7 +56,7 @@
         <%= f.label :message, "Yes, I would like a reply to my email inquiry." %>
       </p>
       <p>
-        <%= image_submit_tag "felix/buttons/contact_submit_up.png", :alt => "Submit" %>
+        <%= image_submit_tag "felix/buttons/submit_up_23x52.png", :alt => "Submit" %>
       </p>
     </div>
 	<% end %>
