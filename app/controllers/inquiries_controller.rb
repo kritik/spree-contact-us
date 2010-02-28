@@ -1,7 +1,5 @@
 class InquiriesController < Spree::BaseController
   resource_controller
-
-  helper 'spree/base'
   
   def index
     #redirect_to(new_inquiry_url) unless params[:inquiry]
