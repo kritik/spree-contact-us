@@ -1,63 +1,36 @@
 <%= error_messages_for :inquiry %>
 
-<% content_for :jquery_document_ready do %>
-  $(".contact_form form").validate();
-<% end %>
-
-<%= seo_friendly_title "SEND US A LINE", :class => "title" %>
+<h1>Contact Us</h1>
 <p>Have a question / comment / suggestion? We'd like to know.</p>
 
 <div class="contact_form">
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
-    <div class="left">
-      <p>
-        <%= f.label :name, "Inquiry" %>
-        <%= f.select :inquiry_type, inquiry_types %>
-      </p>
-      <p>
-        <%= f.label :order_no, "Order #" %>
-        <%= f.text_field :order_no %>
-      </p>
-      <p>
-        <%= f.label :first_name, "Name" %>
-        <%= f.text_field :name, :class => 'required' %>
-      </p>
-      <p>
-        <%= f.label :email, "Email" %>
-        <%= f.text_field :email, :class => 'required email' %>
-      </p>
-      <p>
-        <%= f.label :phone, "Phone #" %>
-        <%= f.text_field :name, :class => 'phone' %>
-      </p>
-    </div>
-    <div class="right">
-      <p>
-        <%= f.label :message, "Message" %><br/>
-        <%= f.text_area :message, :class => 'required' %>
-      </p>
-    </div>
-    <div class="left">
-      <p class="address">
-        Felix Ltd<br/>
-        12906 NE 30th Street<br/>
-        Bellevue WA 98005-1607<br/>
-        425.269.1556<br/>
-        info@byfelix.net
-      </p>
-    </div>
-    <div class="right">
-      <p class="checkbox">
-        <span><%= f.check_box :name %></span>
-        <%= f.label :message, "Yes, please notify me of new products or other FeliX news!" %>
-      </p>
-      <p class="checkbox">
-        <span><%= f.check_box :name %></span>
-        <%= f.label :message, "Yes, I would like a reply to my email inquiry." %>
-      </p>
-      <p>
-        <%= image_submit_tag "felix/buttons/submit_up_23x52.png", :alt => "Submit" %>
-      </p>
-    </div>
+    <p>
+      <%= f.label :name, "Inquiry" %>
+      <%= f.select :inquiry_type, inquiry_types %>
+    </p>
+    <p>
+      <%= f.label :order_no, "Order #" %>
+      <%= f.text_field :order_no %>
+    </p>
+    <p>
+      <%= f.label :first_name, "Name" %>
+      <%= f.text_field :name, :class => 'required' %>
+    </p>
+    <p>
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, :class => 'required email' %>
+    </p>
+    <p>
+      <%= f.label :phone, "Phone #" %>
+      <%= f.text_field :name, :class => 'phone' %>
+    </p>
+    <p>
+      <%= f.label :message, "Message" %><br/>
+      <%= f.text_area :message, :class => 'required' %>
+    </p>
+    <p>
+      <%= submit_tag %>
+    </p>
 	<% end %>
 </div>
