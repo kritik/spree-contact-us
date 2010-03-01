@@ -16,6 +16,8 @@ class InquiriesController < Spree::BaseController
         # make call to mail engine API
       end
     end
+
+    wants.html { redirect_to root_url }
   end
   
 end
