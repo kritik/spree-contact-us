@@ -1,15 +1,11 @@
 <% content_for :page_title do %>
-	<%= @site_page.page_title rescue 'Charity T-Shirts, Wolfmother, The National, Broken Social Scene, Devendra Banhart, Clap Your Hands Say Yeah, Rilo Kiley...' %>
+	<%= @site_page.page_title rescue '' %>
 <% end %>
 
-<% content_for :sidebar_left do %>
-	<%= render :partial => "shared/bands_sidebar",  :locals => { :products => @products, :taxon => @taxon } %>
-<% end %>
-<h1 class="form">CONTACT US</h1>
-<script type="text/javascript">
-	Cufon.replace('h1.form');
-</script>
+<h1>Contact Us!</h1>
 
+
+<div id="product-wrapper">
 <%= error_messages_for :inquiry %>
 <div class="generic_form">
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
@@ -28,20 +24,11 @@
 		<p><%= f.label :message, "Message" %>
 		   <%= f.text_area :message, :class => 'required' %>
 		</p>
-		<p><%= label_tag 'mailing_list', "Send me YBP news and info by email!" %>
-		   <%= check_box_tag 'mailing_list' %>
-		</p>
+		
 	  <p>
 	    <%= submit_tag "Send It!" %>
 	  </p>
 	<% end %>
-	<script>
-	  $(document).ready(function(){
-	    $(".generic_form form").validate();
-	  });
-	  </script>
+	
 </div>
-
-<% content_for :sidebar_right do %>
-	<%= render :partial => 'shared/dynamic_sidebars' %>
-<% end %>
+</div>
