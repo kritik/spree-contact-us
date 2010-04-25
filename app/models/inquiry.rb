@@ -8,6 +8,8 @@ class Inquiry < ActiveRecord::Base
 
   def deliver_notification_email
     InquiryMailer.deliver_notification(self)
+  rescue
+    RAILS_DEFAULT_LOGGER.warn("Inquiry mailer failed to send mail due to the contact email being undefined")
   end
   
 end
