@@ -12,6 +12,7 @@ ru-RU:
   order_number: Номер заказа
   name: Ваше имя
   message: Сообщение
+  send_inquiry: Отправить
 
   inquiry_successfull: Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время
 

@@ -12,5 +12,6 @@ en-US:
   order_number: Order number
   name: Your Name
   message: Message
+  send_inquiry: Send Message
 
   inquiry_successfull: Got it! We'll be back in touch shortly.
