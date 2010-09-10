@@ -1,15 +1,14 @@
 <% content_for :page_title do %>
 	<%= @site_page.page_title rescue '' %>
 <% end %>
-
+<div id="contact_left">
 <h1>Contact Us!</h1>
 
 
-<div id="product-wrapper">
 <%= error_messages_for :inquiry %>
 <div class="generic_form">
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
-	  <p><%= f.label :name, "Your Name" %>
+		<p><%= f.label :name, "Your Name" %>
 		   <%= f.text_field :name, :class => 'required' %>
 		</p>
 		<p><%= f.label :email, "Your Email Address" %>
@@ -21,7 +20,7 @@
 		<p><%= f.label :order_no, "Order #" %>
 		   <%= f.text_field :order_no %>
 		</p>
-		<p><%= f.label :message, "Message" %>
+		<p><%= f.label :message, "Message" %><br />
 		   <%= f.text_area :message, :class => 'required' %>
 		</p>
 		
@@ -31,4 +30,8 @@
 	<% end %>
 	
 </div>
+</div>
+<div id="contact_right">
+	<h1>Contact Info</h1>
+	<%= render 'shared/contact_info' %>
 </div>
