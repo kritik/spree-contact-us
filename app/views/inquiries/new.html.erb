@@ -10,7 +10,11 @@
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
 		<p><%= f.label :name, "Your Name" %>
 		   <%= f.text_field :name, :class => 'required' %>
-		</p>
+    </p>
+    <p>
+       <%= f.label :phone_number, "Your Phone Number" %>
+       <%= f.text_field :phone_number, :class => 'required' %>
+    </p>
 		<p><%= f.label :email, "Your Email Address" %>
 		   <%= f.text_field :email, :class => 'required email' %>
 		</p>
