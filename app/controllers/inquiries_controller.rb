@@ -8,9 +8,8 @@ class InquiriesController < Spree::BaseController
     render :action => :new
   end
  
-  create do
-    flash "Got it! We'll be back in touch shortly."
-    wants.html { redirect_to :action => :index }
+  create.success do
+    wants.html { redirect_to :action => :show }
   end
   
 end

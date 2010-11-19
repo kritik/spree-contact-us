@@ -7,10 +7,13 @@
         <legend><%= t('Fill_out_the_fields_to_contact_us') %></legend>
 
         <div class="formFieldsWrapper">
+
         <% unless @inquiry && !@inquiry.errors.count.zero? %>
             <%= render :partial => 'shared/contact_info' %>
         <% else %>
-            <%= error_messages_for :inquiry %>
+            <div class="errors">
+                <%= error_messages_for :inquiry %>
+            </div>
         <% end %>
 
         <p class="field">
