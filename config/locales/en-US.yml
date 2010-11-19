@@ -1,2 +1,17 @@
-en:
-  inquiries: Contact Us
+en-US:
+  inquiries: Inquiries
+  inquiries_settings: Inquiries Settings
+  inquiries_settings_description: Settings for the "Contact Us" inquiry form
+  inquiries_preferences: Inquiries Preferences
+  inquiries_recipients: Recipients
+  inquiries_recipients_to: Mail to this address
+  inquiries_recipients_bcc: BCC this address
+
+  contact_us: Contact Us
+  inquiry: Question type
+  order_number: Order number
+  name: Your Name
+  message: Message
+  send_inquiry: Send Message
+
+  inquiry_successfull: Got it! We'll be back in touch shortly.
