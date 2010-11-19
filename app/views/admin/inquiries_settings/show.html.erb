@@ -13,4 +13,13 @@
   </tr>
 </table>
 
+<h4><%= t("inquiries_ask_for_order_number") %>: <%= Spree::Config[:contact_us_ask_for_order_number]? t('yes') : t('no') %></h4>
+<h4><%= t("inquiries_ask_for_phone") %>: <%= Spree::Config[:contact_us_ask_for_phone]? t('yes') : t('no') %></h4>
+<% unless Spree::Config[:contact_us_inquiry_types].blank? %>
+    <h4><%= t("inquiries_contact_types") %></h4>
+    <p>
+    <%= Spree::Config[:contact_us_inquiry_types].gsub(/,/, '<br >') %>
+    </p>
+<% end %>
+
 <p><%= link_to_with_icon 'edit', t("edit"), edit_admin_inquiries_settings_path %></p>

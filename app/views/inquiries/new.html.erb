@@ -11,25 +11,31 @@
 <div class="contact_form">
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
     <p>
-      <%= f.label :name, t(:question_type) %>
-      <%= f.select :inquiry_type, INQUIRY_TYPES %>
-    </p>
-    <p>
-      <%= f.label :order_no, t(:order_number) %>
-      <%= f.text_field :order_no %>
-    </p>
-    <p>
-      <%= f.label :first_name, t('name') %>
+      <%= f.label :name, t('name') %>
       <%= f.text_field :name, :class => 'required' %>
     </p>
     <p>
       <%= f.label :email, t('email') %>
       <%= f.text_field :email, :class => 'required email' %>
     </p>
-    <p>
-      <%= f.label :phone, t('phone') %>
-      <%= f.text_field :name, :class => 'phone' %>
-    </p>
+    <% if Spree::Config[:contact_us_ask_for_order_number] %>
+        <p>
+          <%= f.label :order_no, t(:order_number) %>
+          <%= f.text_field :order_no %>
+        </p>
+    <% end %>
+    <% if Spree::Config[:contact_us_ask_for_phone] %>
+        <p>
+          <%= f.label :phone, t('phone') %>
+          <%= f.text_field :name, :class => 'phone' %>
+        </p>
+    <% end %>
+    <% unless Spree::Config[:contact_us_inquiry_types].blank? %>
+        <p>
+          <%= f.label :inquiry_type, t(:question_type) %>
+          <%= f.select :inquiry_type, Spree::Config[:contact_us_inquiry_types].split(',') %>
+        </p>
+    <% end %>
     <p>
       <%= f.label :message, t('message') %><br/>
       <%= f.text_area :message, :class => 'required' %>

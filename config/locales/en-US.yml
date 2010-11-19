@@ -7,8 +7,13 @@ en:
   inquiries_recipients: Recipients
   inquiries_recipients_to: Mail to this address
   inquiries_recipients_bcc: BCC this address
-  contact_us: Contact Us
-  question_type: Question type
+  inquiries_form_field_settings: Contact Form Fields Setup
+  inquiries_ask_for_order_number: Include Field for Order Number?
+  inquiries_ask_for_phone: Include Field for Phone?
+  inquiries_contact_types: Contact Type selections
+  inquiries_contact_types_help: list of choices for dropdown, separated by commas (or leave blank)
+  contact_us: Contact 
+  question_type: Subject
   order_number: Order number
   name: Your Name
   message: Message

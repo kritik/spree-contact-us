@@ -21,6 +21,26 @@
           <%= text_field_tag('preferences[contact_form_bcc]', Spree::Config[:contact_form_bcc], :maxlength => 256, :class => 'email') %>
         </p>
       </fieldset>
+
+      <fieldset>
+        <legend><%= t('inquiries_form_field_settings') %></legend>
+        <p>
+        <label>
+            <input name="preferences[contact_us_ask_for_order_number]" type="hidden" value="0" />
+            <%= check_box_tag('preferences[contact_us_ask_for_order_number]', "1", Spree::Config[:contact_us_ask_for_order_number]) %>&nbsp;<%= t('inquiries_ask_for_order_number') %>&nbsp;</label>
+        </p>
+        <p>
+        <label>
+            <input name="preferences[contact_us_ask_for_phone]" type="hidden" value="0" />
+            <%= check_box_tag('preferences[contact_us_ask_for_phone]', "1", !Spree::Config[:contact_us_ask_for_phone]) %>&nbsp;<%= t('inquiries_ask_for_phone') %>&nbsp;</label>
+        </p>
+        <p>
+        <label>&nbsp;<%= t('inquiries_contact_types') %>&nbsp;<br /><%= text_field_tag('preferences[contact_us_inquiry_types]', Spree::Config[:contact_us_inquiry_types], :size=>44) %></label>
+        <br />
+        <span class="note"><%= t('inquiries_contact_types_help') %></span>
+        </p>
+      </fieldset>
+
     </div>
   </div>
 
