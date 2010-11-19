@@ -11,11 +11,11 @@
 <div class="contact_form">
 	<% form_for(:inquiry, :url => collection_url) do |f| %>
     <p>
-      <%= f.label :name, t('inquiry') %>
+      <%= f.label :name, t(:question_type) %>
       <%= f.select :inquiry_type, INQUIRY_TYPES %>
     </p>
     <p>
-      <%= f.label :order_no, t('order_number') %>
+      <%= f.label :order_no, t(:order_number) %>
       <%= f.text_field :order_no %>
     </p>
     <p>
