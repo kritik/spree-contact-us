@@ -32,7 +32,7 @@
         <p>
         <label>
             <input name="preferences[contact_us_ask_for_phone]" type="hidden" value="0" />
-            <%= check_box_tag('preferences[contact_us_ask_for_phone]', "1", !Spree::Config[:contact_us_ask_for_phone]) %>&nbsp;<%= t('inquiries_ask_for_phone') %>&nbsp;</label>
+            <%= check_box_tag('preferences[contact_us_ask_for_phone]', "1", Spree::Config[:contact_us_ask_for_phone]) %>&nbsp;<%= t('inquiries_ask_for_phone') %>&nbsp;</label>
         </p>
         <p>
         <label>&nbsp;<%= t('inquiries_contact_types') %>&nbsp;<br /><%= text_field_tag('preferences[contact_us_inquiry_types]', Spree::Config[:contact_us_inquiry_types], :size=>44) %></label>
