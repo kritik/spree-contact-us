@@ -33,11 +33,11 @@
 				<%= inquiry.order_no %>
 			</td>
 			<td>
-				<%=h truncate(inquiry.message, 100) %>
+				<%=h truncate(inquiry.message, :length => 100) %>
 			</td>
 			<td>
-				<%= link_to "Check it", object_url(inquiry) %> | 
-	      <%=link_to "Delete it", object_url(inquiry), :method => :delete %>
+				<%= link_to "View", object_url(inquiry) %> | 
+	      <%=link_to "Delete", object_url(inquiry), :method => :delete %>
 	     </td>
 		</tr>
 		<% end %>
