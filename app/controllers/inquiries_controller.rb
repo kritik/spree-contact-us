@@ -9,7 +9,7 @@ class InquiriesController < Spree::BaseController
   end
  
   create.success do
-    wants.html { redirect_to :action => :show }
+    wants.html { redirect_to object }
   end
   
 end
