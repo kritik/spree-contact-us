@@ -42,7 +42,7 @@
               <%= f.select :inquiry_type, Spree::Config[:contact_us_inquiry_types].split(',') %>
             </p>
         <% end %>
-        <p class="textarea_field">
+        <p class="field textarea_field">
           <%= f.label :message, t('message') %>
           <%= f.text_area :message, :class => 'required' %>
         </p>
