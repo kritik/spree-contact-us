@@ -14,4 +14,12 @@ class Inquiry < ActiveRecord::Base
     RAILS_DEFAULT_LOGGER.warn("Inquiry mailer failed to send mail due to the contact email being undefined")
   end
   
+  def meta_keywords
+    Spree::Config[:default_meta_keywords]
+  end
+  
+  def meta_description
+    Spree::Config[:default_meta_description]
+  end
+  
 end

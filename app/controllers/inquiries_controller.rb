@@ -9,7 +9,7 @@ class InquiriesController < Spree::BaseController
   end
  
   create.success do
-    wants.html { redirect_to object }
+    wants.html { redirect_to contact_path(object) }
   end
   
 end

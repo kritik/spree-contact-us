@@ -13,6 +13,7 @@ form label {
   display: inline-block;
   line-height: 1.8;
   vertical-align: top;
+  float:left;
 }
 form fieldset ol {
   margin: 0;

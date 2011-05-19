@@ -2,19 +2,12 @@
 
 <div id="contact_form">
 
-	<% form_for(:inquiry) do |f| %>
+	<%= form_for(@inquiry, :url => contact_index_path) do |f| %>
     <fieldset>
         <legend><%= t('Fill_out_the_fields_to_contact_us') %></legend>
 
         <div class="formFieldsWrapper">
-
-        <% unless @inquiry && !@inquiry.errors.count.zero? %>
-            <%= render :partial => 'shared/contact_info' %>
-        <% else %>
-            <div class="errors">
-                <%= error_messages_for :inquiry %>
-            </div>
-        <% end %>
+	<%= render "shared/error_messages", :target => @inquiry %>
 
         <p class="field">
           <%= f.label :name, t('name') %>
